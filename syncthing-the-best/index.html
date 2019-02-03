@@ -215,13 +215,13 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl start syncthing</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl restart syncthing</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>停止</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl stop syncthing</span><br></pre></td></tr></table></figure>
-</li>
+<li>重启</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl restart syncthing</span><br></pre></td></tr></table></figure>
+<ul>
+<li>停止</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl stop syncthing</span><br></pre></td></tr></table></figure>
 <p>启动进程后，可以用浏览器打开 <code>http://你的IP:8384/</code> 来查看 web 管理页</p>
 <p>如果无法打开页面，需要修改 <code>/.config/syncthing/config.xml</code> 里的 <code>127.0.0.1:8384</code> 字段为 <code>0.0.0.0:8384</code>，或者你可以和我一样使用 nginx 做反向代理，前提是你知道怎么做</p>
 <h3 id="在路由器上安装"><a href="#在路由器上安装" class="headerlink" title="在路由器上安装"></a><a href="#在路由器上安装" title="在路由器上安装"></a>在路由器上安装</h3><p>目前 <a href="https://entware.net/" target="_blank" rel="noopener">Entware</a> 源里已经有这个包了，但是我发现它是个旧版本，并且有问题，所以这里我选择手动安装</p>
@@ -256,6 +256,10 @@
     
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="在 Windows 上享受更棒的字体渲染" href="/better-font-on-win/">
+            ← 在 Windows 上享受更棒的字体渲染
+        </a>
         
         <span class="prev-next-post">•</span>
         
@@ -318,6 +322,12 @@
       
       
       <li>
+        <a href="/better-font-on-win/">在 Windows 上享受更棒的字体渲染</a>
+      </li>
+      
+      
+      
+      <li>
         <a href="/syncthing-the-best/">Syncthing就是我要的同步备份软件</a>
       </li>
       
@@ -328,10 +338,6 @@
       </li>
       
       
-      
-      <li>
-        <a href="/TensorFlow/">MacOS上虚拟环境安装TensorFlow</a>
-      </li>
       
       
       
@@ -353,7 +359,7 @@
     </header>
     <div class="read-next-card-content">
         <ul>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/好软推荐/">好软推荐</a></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/好软推荐/">好软推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
         </ul>
     </div>
 </article>
@@ -368,7 +374,7 @@
 		<h3 class="read-next-card-header-title">标签云</h3>
 	</header>
 	<div class="read-next-card-content-ext">
-		<a href="/tags/NumPy/" style="font-size: 14px;">NumPy</a> <a href="/tags/Python/" style="font-size: 24px;">Python</a> <a href="/tags/TensorFlow/" style="font-size: 14px;">TensorFlow</a> <a href="/tags/syncthing/" style="font-size: 14px;">syncthing</a> <a href="/tags/人工智能/" style="font-size: 14px;">人工智能</a> <a href="/tags/备份/" style="font-size: 14px;">备份</a> <a href="/tags/数据科学/" style="font-size: 14px;">数据科学</a> <a href="/tags/软件/" style="font-size: 14px;">软件</a>
+		<a href="/tags/NumPy/" style="font-size: 14px;">NumPy</a> <a href="/tags/Python/" style="font-size: 24px;">Python</a> <a href="/tags/TensorFlow/" style="font-size: 14px;">TensorFlow</a> <a href="/tags/syncthing/" style="font-size: 14px;">syncthing</a> <a href="/tags/windows/" style="font-size: 14px;">windows</a> <a href="/tags/人工智能/" style="font-size: 14px;">人工智能</a> <a href="/tags/备份/" style="font-size: 14px;">备份</a> <a href="/tags/字体/" style="font-size: 14px;">字体</a> <a href="/tags/数据科学/" style="font-size: 14px;">数据科学</a> <a href="/tags/美化/" style="font-size: 14px;">美化</a> <a href="/tags/软件/" style="font-size: 14px;">软件</a>
 	</div>
 </article>
 

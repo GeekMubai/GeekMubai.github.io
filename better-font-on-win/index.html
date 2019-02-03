@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>在 Windows 上享受更棒的字体渲染 | 极客慕白</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="慕白">
+	<meta name="description" content="今天就让我来带大家仔细讲讲 Windows 的字体渲染为什么这么差，以及如何用稳定的方法解决字体渲染问题。">
+
+	
+	<meta name="keywords" content="字体渲染">
+	
+
+	
+	<link rel="shortcut icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	<link rel="apple-touch-icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://geekmubai.com/feed" title="极客慕白">
+	
+
+	<meta property="og:site_name" content="极客慕白">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="在 Windows 上享受更棒的字体渲染 | 极客慕白">
+	<meta property="og:description" content="今天就让我来带大家仔细讲讲 Windows 的字体渲染为什么这么差，以及如何用稳定的方法解决字体渲染问题。">
+	<meta property="og:url" content="https://blog.geekmubai.com/better-font-on-win/">
+
+	
+	<meta property="article:published_time" content="2019-02-03T20:02:30+08:00"> 
+	<meta property="article:author" content="慕白">
+	<meta property="article:published_first" content="极客慕白, /better-font-on-win/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="facebook" href="https://blog.csdn.net/geekmubai" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1049 1024"><path d="M1141.351404 39.055942l-28.91333 218.474629c-126.144728-19.927251-251.601043-38.376709-377.75495-27.674187-115.460564 9.802996-227.405635 32.180995-309.124802 122.987208-150.018878 166.696821-68.391499 396.461416 158.252293 437.463272 141.115408 25.52634 283.919721 11.785624 425.448176-8.123269-5.452228 112.440727-5.764308 95.303843-10.674985 205.229569-1.073924 24.057726 4.277337 14.612705-161.648461 31.914809-176.004159 9.004437-351.879815 11.189-520.550085-52.888447C156.545029 905.721534 30.675666 809.16019 5.176863 630.815428c-26.251468-183.595056 48.803865-331.796524 192.516883-446.128091C413.36883 13.098197 790.802521-47.271 1141.351404 39.055942z" fill="#ffffff"/></svg>
+    </a>
+    
+    
+    
+    
+    <a class="social-link" title="bilibili" href="https://space.bilibili.com/167817331/#" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816zm301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72.864 73.92.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856zm-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456zm638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456zm-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952z"/></svg>
+    </a>
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2019-02-03T12:31:54.302Z" itemprop="datePublished">
+                    2019-02-3
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/教程/">教程</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">在 Windows 上享受更棒的字体渲染</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <h1 id="如何在-Windows-上享受更棒的字体渲染"><a href="#如何在-Windows-上享受更棒的字体渲染" class="headerlink" title="如何在 Windows 上享受更棒的字体渲染"></a>如何在 Windows 上享受更棒的字体渲染</h1><p>Windows 的字体渲染问题一直是一个老大难，每隔一段时间就会有人吐槽 Windows 的字体有多难看、macOS 的字体又有多美观。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203203949.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203203949.png"></p>
+<p>实际上，微软在这方面并非毫无作为，而是进行过多次优化。但由于软硬件上的种种限制，让广大群众至今没能真正享受到高质量的字体渲染效果。<br>今天就让我来带大家仔细讲讲 Windows 的字体渲染为什么这么差，以及如何用稳定的方法解决字体渲染问题。</p>
+<h2 id="Windows-的字体渲染问题出在哪里？"><a href="#Windows-的字体渲染问题出在哪里？" class="headerlink" title="Windows 的字体渲染问题出在哪里？"></a>Windows 的字体渲染问题出在哪里？</h2><p>长期使用 macOS 的用户可能无法理解 Windows 用户到底在发什么牢骚。<br>为了有一个直观的感受，我在 Windows 和 macOS 中各截取了一些文字。对比一下下面这两段文字，就会发现它们的实际观感区别很大。<br><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204101.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204101.png"></p>
+<blockquote>
+<p>macOS 下的字体</p>
+</blockquote>
+<p>将 macOS 下的文字放大后观察，字体美观、边缘厚实，一笔一划很是清晰。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204244.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204244.png"></p>
+<blockquote>
+<p>Windows 10 下的字体</p>
+</blockquote>
+<p>Windows 的字体只能算是能够看清，但边缘总有些发虚，对比之后则略逊一筹。放大后观察，边缘有一些红绿小色块，「安」字中间的一横显得颜色很深，整体多少有些不协调。<br>而出现这种情况的原因有很多，我总结了以下 3 点——</p>
+<h3 id="屏幕显示分辨率低"><a href="#屏幕显示分辨率低" class="headerlink" title="屏幕显示分辨率低"></a>屏幕显示分辨率低</h3><p>屏幕的显示分辨率是首当其冲的问题。<br>为了描述这个问题是怎么出现的，除了屏幕本身的分辨率和尺寸之外，我们还需要了解显示器的一个重要参数：PPI（Pixels Per Inch），指的是「每英寸的像素数量」。<br>我们可以用一个公式来计算出屏幕的 PPI：√(纵向像素数² + 横向像素数²) / 屏幕尺寸</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204350.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204350.png"></p>
+<p>比如一块 1920 x 1080 的 15.6 寸显示器，它的 PPI 就是 √(1920² + 1080²) / 15.6 = 141.21。从这个公式中可以看出「同等分辨率的屏幕越大，PPI 就越低」。<br>如果我们想在屏幕上显示文字，就需要在像素点阵中填充内容。比如你想在 12 x 12 的点阵下塞进一个中文汉字，只用黑白两色填充就只能得到图中的点阵文字。只有换成一个更大的点阵，笔画之间才会有空间填充更多的笔画细节，从而使笔画之间变得更为顺滑。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204432.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204432.png"></p>
+<p>近些年出产的 Mac 都配备上了 Retina 屏幕，分辨率从 2560 x 1600 到最高的 5120 x 2880 不等，PPI 可以达到 227。实际使用时，macOS 通常会采用缩放，让一块高分辨率的屏幕显示更多的内容，文字自然会变得更加清晰。<br>而 Windows 方面，仍然有大量的电脑在使用 1920 x 1080 的分辨率和更低分辨率的显示器，大多数万元以下的笔记本配备的也是 1080P 甚至是 1366 x 768 的显示器。一块 15.6 寸的 1080P 屏幕，PPI 只能达到 141 上下。相比高 PPI 的 Mac，Windows 的文字显示自然比不过它。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204449.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204449.png"></p>
+<p>所以，屏幕分辨率属于 Mac 天然的硬件优势。</p>
+<h3 id="字体问题"><a href="#字体问题" class="headerlink" title="字体问题"></a>字体问题</h3><p>第二个问题在于字体。 字体的字形不同，也会影响字体的显示效果。<br>比如在 Word 中使用四号宋体，边缘会显得模糊，而小四、五号等字号时，边缘则十分锐利。即使直接在 Word 中使用苹方字体，边缘也会出现一定的模糊。<br><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204521.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204521.png"></p>
+<p>这种进行模糊处理的方式，其实是 <strong>Windows 对于低分辨率屏幕下字体显示进行的特殊处理：Hint</strong>。每个字体本身会带有一个 GASP 表，Windows 的渲染引擎会根据这些 GASP 表来判断是否需要做处理。<br>当屏幕分辨率过低或是字太小，不足以显示所有文字细节时，Windows 就会启动 Hint 让文字变得更清晰，这本来是一件好事。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204553.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204553.png"></p>
+<p>然而如果字体的 GASP 表不完善，就会让 Hint 误操作，本来就是可以正常显示字体的高分屏，但经过 Hint 处理过后，原本清晰的字体反而变得模糊、笔画高低不平了，这就是字体本身的问题。<br>这个问题曾出现在 Windows 的默认字体微软雅黑上。如今最新版的 Windows 10 中内置的微软雅黑已经进行过优化，比以前要好很多了。</p>
+<h3 id="渲染方式问题"><a href="#渲染方式问题" class="headerlink" title="渲染方式问题"></a>渲染方式问题</h3><p>如果排除上面两个因素，最后的问题就是系统的文字渲染方式了。<br>粗略地讲，Windows 目前采用三种不同的渲染方式，它们之间是相互补充的关系，同时存在于系统中。</p>
+<ul>
+<li>GDI+（Graphical Device Interface）：GDI 渲染指的是图形设备接口，属于 Windows 的核心组件之一。GDI 的历史很悠久，许多年迈的 Win32 软件都采用 GDI 来渲染字体。GDI+ 是它的改进版。</li>
+<li>ClearType：为了提升 LCD 屏幕的字体渲染效果而推出的改进功能，也是目前 Win 10 主要采用的字体渲染方式。准确地讲这并不是渲染引擎，称为字符平滑工具、抗锯齿功能更为合适。</li>
+<li>DirectWrite：为了提升高分辨率屏幕的字体渲染做的优化引擎。需要开发者做支持，全面进入 DirectWrite 时代还需经历时日。目前主要是 UWP 应用在使用。<br>其中的传统字体渲染引擎 GDI 很老，采用 GDI 的 Win32 软件在高分辨率屏幕下使用 100% 之外的缩放就会出现模糊。但由于采用 GDI 的软件实在太多，牵一发而动全身，微软无法轻易换掉 GDI。<br>于是 ClearType 便应运而生。ClearType 的原理是让显示器的 R , G , B 次像素放光，在 x 和 y 轴上增加一些颜色进行微调，使得文字更清晰。</li>
+</ul>
+<p>不过这尚未真正解决问题，在 Windows 10 默认启用 ClearType 的情况下，文字表现依然不佳。最前面的对比图中，Windows 的文字边缘就有这种红绿小色块的身影。在低分屏下，这种小色块会让文字边缘显得「有些糊」，中文的笔画也会有深有浅。</p>
+<p><strong>于是微软又推出了新的 DirectWrite 引擎，它就是为了取代 GDI 和 GDI+ 而诞生的。</strong>它的渲染方式已经和 iOS、Android 上采用的 FreeType 引擎效果接近，只是我们日常用的许多老软件未做适配。所以这也是为什么 UWP 应用的字体渲染会比 Win32 软件看起来要好一些的原因。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204703.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204703.png"></p>
+<p>如果做一个形象的比喻，那么 GDI 就是年迈的老人，ClearType 就是一副眼镜，DirectWrite 则是更能干的接班人。<br>可以发现，字体渲染方式的问题其实是多方面的，根源就在于 GDI 的老旧、ClearType 的不完善、软件不跟进 DirectWrite 这些问题上。这几个渲染方式会影响到优化时的一些操作，我们后面还会提到。</p>
+<h2 id="如何搞定渲染"><a href="#如何搞定渲染" class="headerlink" title="如何搞定渲染"></a>如何搞定渲染</h2><p>了解字体渲染效果差的原因之后，我们可以发现 Windows 的字体渲染问题还不少，这些问题可以有很多种解决方法，括号中是解法的简单概括——</p>
+<ul>
+<li>显示器分辨率过低（更换硬件）</li>
+<li>老软件适配差（Win32 应用、单独调整）</li>
+<li>字体本身产生模糊（更换字体、修改字体本身）</li>
+<li>字体丑，想换字体（更换字体）</li>
+<li>渲染时产生的模糊（更换渲染引擎）</li>
+</ul>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204733.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204733.png"></p>
+<p>明确了问题和产生问题的原因，那我们就根据这几个问题来分别做出对应的优化。<br>下面我从简单到复杂，介绍多种优化字体渲染的方法。由于没有人会愿意因为美观而舍弃系统的稳定性，所以在下列方法中，不会出现改动注册表、手动修改系统文件的方法，稳定性 永远是第一要素。</p>
+<h3 id="解决显示器分辨率过低、老软件适配差问题"><a href="#解决显示器分辨率过低、老软件适配差问题" class="headerlink" title="解决显示器分辨率过低、老软件适配差问题"></a>解决显示器分辨率过低、老软件适配差问题</h3><p>其中显示器分辨率属于硬件问题，想一劳永逸地解决问题，可以选择购置 2K 分辨率以上的显示器，Windows 在高分屏上的字体渲染表现不俗。然而，考虑到 2K 显示器「同样不俗」的价格，大部分人还是会选择在现有的硬件资源上进行软件优化。<br>如果想在现有的硬件上做优化，最简单最安全的方法自然是 Windows 内置的方案了。</p>
+<h4 id="直接修改缩放"><a href="#直接修改缩放" class="headerlink" title="直接修改缩放"></a>直接修改缩放</h4><p>在 Windows 中提供了一个简单的「缩放功能」来放大系统的界面。它的效果是让一个文字获得更多的像素点。从而获得更好的视觉体验。<br>在「设置 - 系统 - 显示 - 缩放与布局」中调整「更改文本、应用等项目的大小」，从 100% 到 200% 不等。这些选项中 Windows 会给出一个推荐选项，可以选择适当提升一档。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204830.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204830.png"></p>
+<p>如果你觉得 200% 的缩放仍然不够，「高级缩放设置」中允许你调整到 100% - 500% 之间的任意数字。不过一般不建议改动这一项。</p>
+<h4 id="修改单个应用的缩放"><a href="#修改单个应用的缩放" class="headerlink" title="修改单个应用的缩放"></a>修改单个应用的缩放</h4><p>不过调整缩放之后，会让一些对 DPI 缩放支持较差的老应用出现严重模糊，像是老版本的迅雷、QQ 等软件。这时候可以单独调整应用的缩放。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204859.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204859.png"></p>
+<p>在软件的快捷方式上右键，打开属性菜单。如果是在任务栏上的软件，「右键图标 - 右键菜单中的名称 - 属性」就可以进入属性设置界面。<br>然后在「兼容性」选项卡中，选择「更改高 DPI 设置」，选中「替代高 DPI 的缩放行为」。其中的 应用程序 指的是让软件保持 100% ，系统 指的是根据系统设置的缩放比例来调整（可能会变得模糊），系统（增强） 会对那些基于 GDI 渲染方式的软件进行更多的优化。<br>所以如果遇到了上面的问题，你可以选择使用 应用程序 或是 系统（增强） 来做一些特殊调整。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204930.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204930.png"></p>
+<h4 id="修改字体大小"><a href="#修改字体大小" class="headerlink" title="修改字体大小"></a>修改字体大小</h4><p>如果你目前正在使用的就是高分辨率的屏幕，反而觉得有些字太小、看不清。又不想调整所有界面的缩放，那就可以根据需要单独调整文字的大小。<br>在「设置 - 轻松使用 - 显示 - 放大文本」中调整滑块，然后选择「应用」。<br>之后电脑会进入半分钟左右的等待时间，结束后，Windows 中的所有文字都会被放大一些，文字的观感也会有所提升。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204959.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203204959.png"></p>
+<p>这三种方法都是 Windows 内置的方法，经过简单且安全的操作，就可以让我们在分辨率稍低的显示器上获得较好的文字观感。同时解决了一部分老软件的适配问题。</p>
+<h3 id="解决字体本身产生的问题"><a href="#解决字体本身产生的问题" class="headerlink" title="解决字体本身产生的问题"></a>解决字体本身产生的问题</h3><p>如果调整了屏幕缩放，文字依然模糊。那就需要解决字体问题了。替换字体有两种思路：</p>
+<ol>
+<li>更换字体：用别的字体作为默认字体。 对系统造成的破坏最小，随时可以改回来。</li>
+<li>修改字体：对默认的微软雅黑进行处理。 对微软雅黑进行处理，让它获得更好的视觉效果。<br>全局更换字体的简单方法<br>更换系统字体有许多方法，小软件、小工具也不少。这里推荐一个来自日本开发者的「全局字体更换」开源小工具：noMeiryoUI，noMeiryoUI 的特点是针对亚洲字符集字体做了优化。软件可以在 Github 链接 下载。<br>noMeiryoUI 的操作和使用都非常简单。你只需要事先找到并安装一个适合日常使用的字体，要避免选择缺胳膊少腿的字体，以免改完后出现许多 □ □ □。</li>
+</ol>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203205101.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203205101.png"></p>
+<p>然后就像在编辑器里修改字体一样，点击 <code>Select...</code> 直接指定系统全局所用的字体和字号大小。选择字体时，同一个字体可能会有多种字符集（简体、繁体、日语等），这在 noMeiryoUI 中可以单独选择。当然也可以分别对标题栏、图标、调色板标题、提示、消息框、菜单的字体和字号进行单独设置。<br>然后选择<code>Set All</code>就可以替换完成。</p>
+<p>经过 noMeiryoUI 替换字体后，大部分 Win32 软件（包括系统软件在内）改变默认的字体和字号。noMeiryoUI 无需开在后台，一次替换就能长期使用。<br>为了展现替换效果，我选择了和系统字体差别明显的幼圆字体。软件中采用 DirectWrite 渲染的部分文字是无法替换的，菜单则被完整替换了。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210357.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210357.png"></p>
+<h3 id="修复字体-Hint-模糊的方法"><a href="#修复字体-Hint-模糊的方法" class="headerlink" title="修复字体 Hint 模糊的方法"></a>修复字体 Hint 模糊的方法</h3><p>字体模糊的情况通常在采用 125% - 200% 缩放比例的情况下发生。所以修复微软雅黑、宋体等系统默认字体本身产生的模糊，也是一个可行的方案。<br>上面讲到由于错误的 GASP 信息产生了不正确的 Hint，那么禁用 Hint 就能让文字变得更锐利一些。大致的思路是：使用批处理脚本处理系统默认字体的 GASP 信息、进入命令行模式（解除字体占用）、将处理后的字体覆盖原字体。<br>这个操作与换一个字体作为系统字体不同，它会修改并替换系统字体文件本身，在未做备份的情况下替换字体可能会产生一些不可预料的后果（字体显示问题、蓝屏等）。所以安全性和兼容性比较一般，不是很推荐。不过它可以解决 DirectWrite 模式下的 Hint 模糊问题，需要的读者可以进入该链接按步骤操作。</p>
+<h3 id="解决渲染时产生的模糊"><a href="#解决渲染时产生的模糊" class="headerlink" title="解决渲染时产生的模糊"></a>解决渲染时产生的模糊</h3><p>如果调整缩放、修改字体都没有缓解字体模糊，就需要采取一些其他手段来解决字体渲染引擎产生的模糊。</p>
+<h4 id="更换系统字体渲染引擎：MacType"><a href="#更换系统字体渲染引擎：MacType" class="headerlink" title="更换系统字体渲染引擎：MacType"></a>更换系统字体渲染引擎：MacType</h4><p>更改字体渲染引擎是一个庞大的工程，只要是有文字的地方就会用到字体渲染，牵一发而动全身，不得不慎重。<br>Windows 上表现出色的字体渲染软件是 MacType，它可以帮助改善 Windows 中基于 GDI 的字体渲染，并支持热替换系统的默认宋体。你可以在它的 Github 链接 下载到 Beta 版本。</p>
+<h4 id="MacType-的加载方式"><a href="#MacType-的加载方式" class="headerlink" title="MacType 的加载方式"></a>MacType 的加载方式</h4><p>下载并安装后，MacType 会进入一个用户向导界面，你可以自主选择 MacType 的加载方式。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210526.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210526.png"></p>
+<p>这几种加载方式的优缺点已经在软件界面中详细说明，如果要概括一下：</p>
+<ul>
+<li>注册表加载：体验最好，开关需要重启系统。</li>
+<li>服务加载：平滑度较高，开关需要使用服务管理器。</li>
+<li>不使用自动加载：拖动到图标上加载，可以只针对特定渲染效果较差的软件修改。</li>
+<li>MacTray 托盘独立加载：可以单独设置一些应用是否渲染。</li>
+<li>MacTray 托盘兼容加载：兼容性最好。</li>
+</ul>
+<p>如果想要全局使用，我个人比较推荐服务加载，软件不会影响到注册表，停用时比较方便。<br>如果只是想针对个别软件进行字体优化，则推荐 MacTray 托盘独立加载。<br>这些加载方式各有优缺点，大家可以衡量一下自己对于美观度和稳定性的要求，来选择最适合自己的方法。</p>
+<h4 id="MacType-的配置文件"><a href="#MacType-的配置文件" class="headerlink" title="MacType 的配置文件"></a>MacType 的配置文件</h4><p>如果你不想做过多的配置，直接使用第二步中预设的默认配置文件，点击完成就配置完毕了。如果对这个配置的渲染效果不满意，可以多试几个，也可以自行配置文件。在网络上也有不少 MacType 相关的字体和配置文件。<br><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210616.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210616.png"></p>
+<p>不过 MacType 的功效仍然是有限的，它不支持采用 DirectWrite 字体引擎的软件（主要是 UWP 应用）。你需要做更多的配置才能实现。</p>
+<h4 id="MacType-的其他注意事项"><a href="#MacType-的其他注意事项" class="headerlink" title="MacType 的其他注意事项"></a>MacType 的其他注意事项</h4><p>尽管 MacType 的效果已是十分喜人，但它作为第三方软件，仍然不可避免地出现一些问题。<br>它的兼容性一般，它在大部分情况下都能正常运作，但在部分软件、游戏、驱动程序中会出现错误的文字渲染，比如一整行文字挤在一起。如果追求工作环境的稳定，则不建议使用 MacType。如果你在安装 MacType 之后，一些原先可以打开的软件忽然打不开了，一定要记得在 MacType 中排除这个软件。<br>顺带一提，目前 Chrome 会默认开启 DirectWrite 且不可关闭，这种情况下使用 MacType 偶尔会产生冲突。网上有许多人求禁用 Chrome 中 DriectWrite 的方法，其实没有这个必要。只需要在 MacType 中关闭针对 Chrome 的渲染，并在 Chrome 中修改浏览器显示字体就可以了。<br><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210828.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/20190203210828.png"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Windows 的字体渲染问题并非是微软完全不作为，因为在的 Windows 10 1703 和 1809 中，字体方面都得到了小幅度的改进，微软雅黑这个字体本身也经历了多次迭代，还有传闻称今年四月份微软将会用兰亭黑体替换掉微软雅黑。但在目前，Windows 渲染效果差仍然是个不争的事实。<br>文章对产生这个问题的原因进行了分析，显示器分辨率，系统默认字体，老的引擎难以淘汰、新的引擎未能覆盖……但只要对症下药，这些问题都是可以解决的。分别从分辨率、字体、渲染引擎几个角度下手，就能搞定 Windows 的字体渲染问题。</p>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="Syncthing就是我要的同步备份软件" href="/syncthing-the-best/">
+            Syncthing就是我要的同步备份软件 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何在-Windows-上享受更棒的字体渲染"><span class="toc-text">如何在 Windows 上享受更棒的字体渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-的字体渲染问题出在哪里？"><span class="toc-text">Windows 的字体渲染问题出在哪里？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#屏幕显示分辨率低"><span class="toc-text">屏幕显示分辨率低</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字体问题"><span class="toc-text">字体问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染方式问题"><span class="toc-text">渲染方式问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何搞定渲染"><span class="toc-text">如何搞定渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决显示器分辨率过低、老软件适配差问题"><span class="toc-text">解决显示器分辨率过低、老软件适配差问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#直接修改缩放"><span class="toc-text">直接修改缩放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改单个应用的缩放"><span class="toc-text">修改单个应用的缩放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改字体大小"><span class="toc-text">修改字体大小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决字体本身产生的问题"><span class="toc-text">解决字体本身产生的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修复字体-Hint-模糊的方法"><span class="toc-text">修复字体 Hint 模糊的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决渲染时产生的模糊"><span class="toc-text">解决渲染时产生的模糊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更换系统字体渲染引擎：MacType"><span class="toc-text">更换系统字体渲染引擎：MacType</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MacType-的加载方式"><span class="toc-text">MacType 的加载方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MacType-的配置文件"><span class="toc-text">MacType 的配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MacType-的其他注意事项"><span class="toc-text">MacType 的其他注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 极客慕白 &mdash;</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/better-font-on-win/">在 Windows 上享受更棒的字体渲染</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/syncthing-the-best/">Syncthing就是我要的同步备份软件</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/MacDMG/">MacDMG</a>
+      </li>
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/好软推荐/">好软推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/NumPy/" style="font-size: 14px;">NumPy</a> <a href="/tags/Python/" style="font-size: 24px;">Python</a> <a href="/tags/TensorFlow/" style="font-size: 14px;">TensorFlow</a> <a href="/tags/syncthing/" style="font-size: 14px;">syncthing</a> <a href="/tags/windows/" style="font-size: 14px;">windows</a> <a href="/tags/人工智能/" style="font-size: 14px;">人工智能</a> <a href="/tags/备份/" style="font-size: 14px;">备份</a> <a href="/tags/字体/" style="font-size: 14px;">字体</a> <a href="/tags/数据科学/" style="font-size: 14px;">数据科学</a> <a href="/tags/美化/" style="font-size: 14px;">美化</a> <a href="/tags/软件/" style="font-size: 14px;">软件</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="极客慕白">极客慕白</a>
+			&copy; 2019
+		</section>
+		<nav class="site-footer-nav">
+			
+            <a href="http://www.miitbeian.gov.cn" title="皖ICP备17018037号" target="_blank" rel="noopener">皖ICP备17018037号</a>
+            <a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+            <a href="https://geekmubai.com" title="GeekMubai" target="_blank" rel="noopener">GeekMubai</a>
+        </nav>
+    </div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="极客慕白">
+			
+                <img src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白 icon">
+			
+            <span>极客慕白</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">在 Windows 上享受更棒的字体渲染</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: 'aBRltWkLKGNezPSGs1TBA0GE-gzGzoHsz',
+        appKey: 'Tg0cJFUAcAbzFVaO5hwaRXsx',
+        placeholder: '你是魔鬼吧，都不留言！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    console.log("this theme is from https://github.com/xzhih/hexo-theme-casper")
+</script>
+
+</body>
+</html>
