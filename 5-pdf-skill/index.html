@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>5 个不为人知的 PDF 技巧 | 极客慕白</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="慕白">
+	<meta name="description" content="工作、学习中，我们都没少和 PDF 文档打交道。">
+
+	
+	<meta name="keywords" content="PDF技巧">
+	
+
+	
+	<link rel="shortcut icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	<link rel="apple-touch-icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://geekmubai.com/feed" title="极客慕白">
+	
+
+	<meta property="og:site_name" content="极客慕白">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="5 个不为人知的 PDF 技巧 | 极客慕白">
+	<meta property="og:description" content="工作、学习中，我们都没少和 PDF 文档打交道。">
+	<meta property="og:url" content="https://blog.geekmubai.com/5-pdf-skill/">
+
+	
+	<meta property="article:published_time" content="2019-02-03T22:02:88+08:00"> 
+	<meta property="article:author" content="慕白">
+	<meta property="article:published_first" content="极客慕白, /5-pdf-skill/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="facebook" href="https://blog.csdn.net/geekmubai" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1049 1024"><path d="M1141.351404 39.055942l-28.91333 218.474629c-126.144728-19.927251-251.601043-38.376709-377.75495-27.674187-115.460564 9.802996-227.405635 32.180995-309.124802 122.987208-150.018878 166.696821-68.391499 396.461416 158.252293 437.463272 141.115408 25.52634 283.919721 11.785624 425.448176-8.123269-5.452228 112.440727-5.764308 95.303843-10.674985 205.229569-1.073924 24.057726 4.277337 14.612705-161.648461 31.914809-176.004159 9.004437-351.879815 11.189-520.550085-52.888447C156.545029 905.721534 30.675666 809.16019 5.176863 630.815428c-26.251468-183.595056 48.803865-331.796524 192.516883-446.128091C413.36883 13.098197 790.802521-47.271 1141.351404 39.055942z" fill="#ffffff"/></svg>
+    </a>
+    
+    
+    
+    
+    <a class="social-link" title="bilibili" href="https://space.bilibili.com/167817331/#" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816zm301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72.864 73.92.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856zm-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456zm638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456zm-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952z"/></svg>
+    </a>
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2019-02-03T14:51:17.889Z" itemprop="datePublished">
+                    2019-02-3
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/教程/">教程</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">5 个不为人知的 PDF 技巧</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <p>工作、学习中，我们都没少和 PDF 文档打交道。</p>
+<p>PDF能流行开来，功劳就在其<strong>兼容性好</strong>，本世纪的设备基本都能打开、打印时所见即所得、传给别人不用担心格式丢失或出错……以至于我和同事曾经调侃：<strong>简单说，PDF 就是一张图片</strong></p>
+<p>不过，如果你想对 PDF 做一些超出「图片范畴」的操作，问题就接踵而至了。这篇文章里，就收集了 5 类疑难杂症，相信不少人都遇到过：</p>
+<ol>
+<li><strong>PDF 边儿太宽</strong>，浪费空间；</li>
+<li><strong>PDF 里全是别人的批注</strong>，影响我阅读；</li>
+<li><strong>PDF 居然有密码</strong>，没法在上面批注、记笔记；</li>
+<li><strong>扫描版 PDF 里的字没法搜索</strong>，只能看着它干瞪眼；</li>
+<li><strong>想把 Word 文档或其他文件转换成 PDF</strong>，一个一个来嫌太慢。</li>
+</ol>
+<p>这些问题遍布 PDF 的生成、传播到阅读、批注，而由于 PDF 的「图片」特性，我们没法像改 Word 文档一样轻松地修改 PDF，需要另辟蹊径。<strong>本文将解决以上所有顽疾。</strong></p>
+<p>上述部分问题没有现成解决方案，所以<strong>我会提供 3 个原创的自动化动作</strong>。考虑到大家用的工具各不相同，我统一提供通用的 Automator 版本，安装后可以在右键菜单取用。各个第三方工具的玩家可以自行改造，做出适合自己操作习惯的动作。</p>
+<p><img alt="" class="post-img b-lazy" href="https://app.yinxiang.com/shard/s49/share/1578e-s49/res/b8be92ea-3118-455e-8511-69f15142a5a2/e999068bac65c7654159e41879975d95.png" data-src="https://app.yinxiang.com/shard/s49/share/1578e-s49/res/b8be92ea-3118-455e-8511-69f15142a5a2/e999068bac65c7654159e41879975d95.png"></p>
+<p>本文所有工具都可以在右键菜单取用</p>
+<p>注：本文技巧仅供个人使用，请勿用于传播盗版资源——事实上，这些方法也入不了有批量生产需求的盗版商之眼。</p>
+<h2 id="技巧一：去除白边"><a href="#技巧一：去除白边" class="headerlink" title="技巧一：去除白边"></a>技巧一：去除白边</h2><p>「白边」是 PDF 文件的特色。有些白边是特意留出来放页码、页眉的，有些则是扫描时一同扫进去的白底1  ，但总而言之，它们挺很浪费屏幕空间，特别在 Kindle、小平板等小尺寸设备上，文字会被压缩好几圈。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/39cfccf8630ed941eccc31c77dba4e20.jpg" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/39cfccf8630ed941eccc31c77dba4e20.jpg"></p>
+<p>用 Kindle 看没裁过的 PDF，往往挺遭罪</p>
+<p>去除白边有很多思路，我们用两种 macOS 原生的。<strong>一种是重新打印，另一种是手动裁剪</strong>，各有优劣，我们分别介绍。</p>
+<h3 id="重新打印"><a href="#重新打印" class="headerlink" title="重新打印"></a>重新打印</h3><p>macOS 自带的打印功能可以按比例缩放 PDF，从而裁出比较整齐的新 PDF 文档。直接用预览工具打开 PDF 文件：</p>
+<ol>
+<li>勾选「缩放」，填入数值。留意一下左侧预览窗口，感觉白边差不多没了就行了。</li>
+<li>选择左下角「存储为 PDF」。</li>
+</ol>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/69461f5c18a25f0b0f3c00c0dcfd46f9.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/69461f5c18a25f0b0f3c00c0dcfd46f9.png"></p>
+<p>重新打印</p>
+<p>重新打印后的 PDF 文件图文内容明显大了一圈，如果你需要在 Kindle 上阅读，也可以把数值填大一些，把页码一起切除。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/64306cc992de75ea308a561136f3fa93.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/64306cc992de75ea308a561136f3fa93.png"></p>
+<p>打印后白边小了很多</p>
+<p>不过打印的缺陷也比较明显，需要 PDF 本身比较规整，可很多扫描版 PDF 的白边分布很随机，没法通过打印通吃它们2  ，这时候就需要手动裁剪了。</p>
+<h3 id="手动裁剪"><a href="#手动裁剪" class="headerlink" title="手动裁剪"></a>手动裁剪</h3><p>听到「手动」两字不用怕，<strong>其实还是可以批量处理的</strong>。仍然用预览工具打开 PDF：</p>
+<ol>
+<li>点击左上角的按钮，开启「缩略图」视图；</li>
+<li>按下 <code>⌘Command - A</code>，选中所有页面；</li>
+<li>点击「菜单栏 - 工具 - 矩形选择」；</li>
+<li>选中需要留下的区域，按 <code>⌘Command - K</code> 进行裁剪。</li>
+</ol>
+<p>手动裁剪 PDF</p>
+<p>裁剪前可以发现，尽管只在 PDF 其中一页进行了选取，但选区被应用到了所有页面——因为我们已经提取选中了它们，<strong>从而实现批量处理</strong>。开一方面，相比重新打印，裁剪还可以更灵活：</p>
+<ol>
+<li>选区能自行调整，不一定非得是 A4 纸3 的长宽比；</li>
+<li>如果部分页面如果裁不齐，可以单独再行修剪。</li>
+</ol>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/6b20ae1126955fdb5bf128906448dd6c.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/6b20ae1126955fdb5bf128906448dd6c.png"></p>
+<p>手动裁剪时，不同页面可以裁成不同大小</p>
+<p>不过手动裁剪也有问题，<strong>首先就是很难裁整齐。</strong>如果你的阅读器能够显示 PDF 封面（基本都能显示，逃不掉的），那你将获得一排参差不齐的书籍封面，看着很碍眼。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/f58f5459a2ea4ab0850b20b94af46f23.jpeg" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/f58f5459a2ea4ab0850b20b94af46f23.jpeg"></p>
+<p>高低不齐的封面看着很难受</p>
+<p>另外，扫描版的 PDF 文件往往体积巨大，动几十上百兆，而裁剪操作仅是隐藏边上的部分，并没有删除它们，<strong>裁好后文件体积不会减小</strong>。</p>
+<p><strong>总之，如果想裁得整齐、精巧，又不在意目录，那可以重新打印；如果需要保留目录，那还是手动裁剪。</strong></p>
+<h2 id="技巧二：去除批注"><a href="#技巧二：去除批注" class="headerlink" title="技巧二：去除批注"></a>技巧二：去除批注</h2><p>有些 PDF 流传了几代，交到我们手里时已经画满了前人的标记。这些用功的痕迹，很大程度上也影响了正常的阅读、批注。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/5368e3972f33c21ea41f02029c04df2c.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/5368e3972f33c21ea41f02029c04df2c.png"></p>
+<p>画满了批注的PDF</p>
+<p>虽说 PDF 可以看作一张「图」，但它可能也是分层的，批注就是最顶端的「图层」，能够选中后删除。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/1add4a4b2f886e89d34ae8b9da3fbcce.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/1add4a4b2f886e89d34ae8b9da3fbcce.png"></p>
+<p>PDF 其实是分层的</p>
+<p>不过文档里的批注出没无常，就算有耐性一个一个手动删，也不一定拔得干净。PDF Expert、Adobe PDF Acrobat 这些专业工具倒是能够批量消灭批注，但它们价格实在太高，这里介绍一个不花钱的工具：<strong>iOS 上的 PDF Viewer</strong>。</p>
+<p>PDF Viewer 是那种讨人喜欢的小巧阅读器，原生界面，简单的导入导出功能、必要的批注工具，最重要的是可以导出纯净版 PDF，不含标注。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/89026d16fd0941542cf2ed6a8c4b3844.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/89026d16fd0941542cf2ed6a8c4b3844.png"></p>
+<p>PDF Viewer 可以导出不带批注的 PDF</p>
+<p>没有多余的步骤，一份干净的 PDF 就出现了。<br><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/343fa9c89a0082b02b1f7ed427422afe.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/343fa9c89a0082b02b1f7ed427422afe.png"></p>
+<p>去除批注前后</p>
+<p>对了，如果你下载了一份插满推广链接的 PDF——尤其是那种不小心碰一下就会弹到浏览器的烦人链接——上述方法或许也能起到批量清理作用。</p>
+<h2 id="技巧三：绕过编辑密码"><a href="#技巧三：绕过编辑密码" class="headerlink" title="技巧三：绕过编辑密码"></a>技巧三：绕过编辑密码</h2><p><strong>有些 PDF 能打开阅读，但是不能编辑，做笔记也不行，很头疼。</strong>这就是遇到拥有者密码（Owner Permission Password）了。</p>
+<p>初衷是好的，但有时也会给自己人带来不便。读书时就有这种情况，系里祖传的一些 PDF 书籍，当年的制作者不知何处高就去，只留密码挡我路，在我们看到精彩处、大笔一挥想记点东西时，发现没有权限编辑。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/c380eaad4ddbd1b9d5d0cd03a40fb7be.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/c380eaad4ddbd1b9d5d0cd03a40fb7be.png"></p>
+<p>编辑密码严重影响做笔记</p>
+<p>好在这类编辑密码也有办法绕过的：不用什么「破解」，<strong>只需要一个 Google Drive 网盘</strong>。</p>
+<ol>
+<li><p>先确认一遍，你遇到的的确是拥有者密码，如果连打开都不给打开，你还是找提供 PDF 的人讨密码吧；确认后，<strong>把想编辑的 PDF 文档上传到 Google Drive</strong>。到这一步，事儿就成了一半了。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/53cfd6fd1a551aa39a8212c4e0c9ae3e.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/53cfd6fd1a551aa39a8212c4e0c9ae3e.png"></p>
+</li>
+</ol>
+<pre><code>上传 PDF 到 Google Drive
+</code></pre><ol start="2">
+<li><p>接着就省力了，在 Google Drive 里点击查看 PDF，<strong>点击右上角的打印按钮</strong>，静待一分钟，不带密码的 PDF 就生成了，Google Drive 会帮你打开一个预览的页面。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/66bd82704e13e2c0fccccade6b3ec4b0.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/66bd82704e13e2c0fccccade6b3ec4b0.png"></p>
+</li>
+</ol>
+<pre><code>在 Google Drive 中打印 PDF
+</code></pre><ol start="3">
+<li><p><strong>最后点击预览界面的下载按钮</strong>，新 PDF 就躺在了你的下载文件夹。如果没看到下载按钮，就在页面中下方晃几下鼠标把它召唤出来。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/98ec498aee043ac7285c81797febe644.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/98ec498aee043ac7285c81797febe644.png"></p>
+</li>
+</ol>
+<pre><code>下载没有密码的 PDF 到本地
+</code></pre><p>说到底，这个技巧的原理只是把你看到动东西重新打印了一遍，其他网盘或在线文档协作工具可能也支持，大家不妨自己测试一下，如果有能在国内可用的服务就更好了。</p>
+<p>之前坊间流传过用 Chrome 浏览器重新打印来「解锁」密码的方子，不过在最新版本的浏览器中已经失效。我做了些测试，当前版本的 Chromium、Firefox、Safari 等浏览器均无法直接打印带密码的 PDF。</p>
+<p>此外，网上还有一些破解 PDF 密码的站点，需要上传原始 PDF 文件，无论出于版权还是安全因素考虑，这里并不推荐4  。当然，如果是一些从不可言说网站下载来的 PDF，连解压/打开密码都不知道，那就无能为力了</p>
+<h2 id="技巧四：将扫描版-PDF-转换成可搜索的文档"><a href="#技巧四：将扫描版-PDF-转换成可搜索的文档" class="headerlink" title="技巧四：将扫描版 PDF 转换成可搜索的文档"></a>技巧四：将扫描版 PDF 转换成可搜索的文档</h2><p>读过扫描版 PDF 的人，都知道那种<strong>能看不能搜</strong>的感觉是多么难受。不巧，有些老教材又只有扫描版，似乎只好硬着头皮人肉检索。</p>
+<p>@契丹神童 曾经在 Power+ 1.0 介绍过 <a href="https://pypi.org/project/ocrmypdf/" target="_blank" rel="noopener">ocrmypdf</a> 这个命令行工具，<strong>能够给扫描件填上一层文字层，使得文本能够被搜索</strong>；我据此做了一个 Automator 动作，这样，不用买第三方工具也可以享受 OCR 功能。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/37d1d39a90204882337480f7b09f0f93.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/37d1d39a90204882337480f7b09f0f93.png"></p>
+<p>ocrmypdf 处理过的文件能被搜索</p>
+<p><a href="https://cl.ly/13501bd4b000" target="_blank" rel="noopener">> 动作下载</a></p>
+<p>光装好动作，还不能直接用，需要安装和配置一下 ocrmypdf。<strong>下面是安装 ocrmypdf 及中文语言包的脚本，直接复制到终端中运行即可。</strong>截至写这篇文章，tesseract 的最新版本是 3.05.02，如果下载语言包失败，请到 <code>/usr/local/Cellar/tesseract/</code> 下检查一下你的版本是多少，并把命令里的旧版本号 <code>3.05.02</code> 替换掉。</p>
+<pre><code># 安装脚本
+brew install ocrmypdf
+wget -o /usr/local/Cellar/tesseract/3.05.02/share/tessdata/chi_sim.traineddata https://github.com/tesseract-ocr/tessdata/raw/master/chi_sim.traineddata
+</code></pre><p>装好动作、配置完成后，OCR 功能就会出现在右键菜单里。</p>
+<p>挑一个扫描版或图片版本的 PDF 识别一下，短则几秒钟，长则几分钟，具体要看 PDF 大小。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/b0e779b1282c96f247cf84bb30fd619a.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/b0e779b1282c96f247cf84bb30fd619a.png"></p>
+<p>OCR 功能在右键菜单里</p>
+<p>动作运行结束后再打开 PDF，就能进行搜索了。其实不光在 PDF 文档里面可以搜索，直接用 Spotlight、Finder 也能搜刚才处理过的 PDF，很方便。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/64eeeed7d421f669fa9d92128e30093f.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/64eeeed7d421f669fa9d92128e30093f.png"></p>
+<p>通过 Spotlight 搜索到了 ocrmypdf 处理过的文件</p>
+<p>除了右键菜单，刚才你下载的 Automator Workflow 还可以当作快速操作来用，直接在 Finder 的 PDF 预览面板里进行 OCR 识别。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/01729d9112a160d1c98d712e8302aad9.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/01729d9112a160d1c98d712e8302aad9.png"></p>
+<p>把 OCR 动作集成到 Finder</p>
+<p>ocrmypdf 的功能非常强大，我只用到了其中的中文和英文 OCR 功能，如果你还要和其他语种打交道的话，不妨读读契丹神童的文章，试着自己配置语言包。</p>
+<h2 id="技巧五：批量制作-PDF"><a href="#技巧五：批量制作-PDF" class="headerlink" title="技巧五：批量制作 PDF"></a>技巧五：批量制作 PDF</h2><p>PDF 最「本职」的工作，估计就是作为一种万能的打印格式。不少人都有给文印店 PDF 文档的好习惯，即便店里设备再古董，打印出来格式也不太会出错。</p>
+<p>不过对于制作 PDF 的人来说，可能就要花点力气了，遇上期末、项目截止时文档较多，还挺麻烦。<strong>下面的两个自动化方法可以一次性把各类常见文档转换成 PDF，方便打印。</strong></p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/426ef75f890bf0c2d671c1da206da1c4.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/426ef75f890bf0c2d671c1da206da1c4.png"></p>
+<p>3 类文档的转换流程</p>
+<h3 id="文本文档转换成-PDF"><a href="#文本文档转换成-PDF" class="headerlink" title="文本文档转换成 PDF"></a>文本文档转换成 PDF</h3><p>不含图片的文档主要有 3 类 ：</p>
+<ol>
+<li>Docx 文档</li>
+<li>HTML 文件</li>
+<li>RTF 富文本文件</li>
+</ol>
+<p>它们转换起来比较容易，在 macOS 上不用下载任何第三方工具，全靠系统工具就能解决。动作我已经做好，大家可以直接下载，解压后双击安装到右键菜单就能用了。</p>
+<p>将文本文档转换为 PDF</p>
+<p><a href="https://cl.ly/74ce1d473a05" target="_blank" rel="noopener">> 动作下载</a></p>
+<p>注：本动作对于 RTF 和 HTML 文件支持良好，部分在 Docx 文档可能丢失格式。</p>
+<p>稍微留意上面的视频，你会发现，<strong>我这个动作不仅可以批量转换 PDF，而且 3 类文档通吃，一起选中也照样处理掉</strong>。其实背后的原理挺简单的，就是根据不同文件格式、套用不同的系统命令6  。具体的代码我们不展开，只需简单了解一下上面 3 类文件的转换过程，以后遇到需要转格式的情况，你也可以对症下药：</p>
+<ol>
+<li>Docx 文档：先用 <code>textutil</code> 命令生成 HTML，再用 <code>cupsfilter</code> 命令转换成 PDF。</li>
+<li>RTF 文件：先用 <code>textutil</code> 命令生成 HTML，再用 <code>cupsfilter</code> 命令转换成 PDF。</li>
+<li>HTML 文件：直接用 <code>cupsfilter</code> 命令转换成 PDF。</li>
+</ol>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/fb6f15d7738060cb869d5e522fc56e69.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/fb6f15d7738060cb869d5e522fc56e69.png"></p>
+<p>各种格式的文章转换成 PDF</p>
+<h3 id="含图片的文档转换成-PDF"><a href="#含图片的文档转换成-PDF" class="headerlink" title="含图片的文档转换成 PDF"></a>含图片的文档转换成 PDF</h3><p>如果是嵌有图片的文档，上面的方法就不起作用了，不过我们仍然有一个原生方案。</p>
+<p>macOS 的老玩家可能还记得，可以安装 Office 套件，然后搭配 Automator 实现 Word 到 PDF 的转换。<strong>其实有个很取巧的办法，完全用不着 Office，用免费的 Pages 就可以生成 PDF，而且通吃 Docx 和 Pages 文档。</strong></p>
+<p>和前几节一样，这次动作还是 Automator Services，装好后同样会出现在右键菜单里。<strong>一次性选中几个 Docx 和 Pages 文档，然后运行这个动作，稍等一会儿几份 PDF 就导出来了。</strong></p>
+<p>将含图片的文档转换成 PDF</p>
+<p><a href="https://cl.ly/8d309b86f69e" target="_blank" rel="noopener">> 动作下载</a></p>
+<p>就像视频所演示的，只要你愿意，Docx 和 Pages 文档混着一起转换也行，照样能够打印成功。</p>
+<p>动作原理并不复杂，只是把日常的「导出」操作写进了 AppleScript 脚本里面；有意思的地方在于，Pages 是可以打开预览（但是一些 Word 专有样式会丢失）Docx 文档的，所以不需要进行任何优化就可以让 AppleScript 像处理原生 Pages 文档一样打印 Docx——反正就是所见即所得嘛，没有什么深奥的东西。</p>
+<p><img alt="" class="post-img b-lazy" href="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/c8162d54b180942fbab8c4ac90a29a64.png" data-src="https://geekmubai-1253861834.cos.ap-shanghai.myqcloud.com/c8162d54b180942fbab8c4ac90a29a64.png"></p>
+<p>通过 Pages 打印带图片的文档</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>PDF 固然是一种方便的预览格式，而「看」以外的操作，往往不是它的特长。条件允许的话，应该选择 Word、Markdown 等更适宜的文档格式。</p>
+<p>由于种种原因，我们仍然需要用到 PDF，而且涉及从页面调整到文本搜索等不属于其本职的操作。遇到这些情况，就需要一些巧劲儿了。</p>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="在 Windows 上享受更棒的字体渲染" href="/better-font-on-win/">
+            在 Windows 上享受更棒的字体渲染 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧一：去除白边"><span class="toc-text">技巧一：去除白边</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重新打印"><span class="toc-text">重新打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手动裁剪"><span class="toc-text">手动裁剪</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧二：去除批注"><span class="toc-text">技巧二：去除批注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧三：绕过编辑密码"><span class="toc-text">技巧三：绕过编辑密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧四：将扫描版-PDF-转换成可搜索的文档"><span class="toc-text">技巧四：将扫描版 PDF 转换成可搜索的文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧五：批量制作-PDF"><span class="toc-text">技巧五：批量制作 PDF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本文档转换成-PDF"><span class="toc-text">文本文档转换成 PDF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#含图片的文档转换成-PDF"><span class="toc-text">含图片的文档转换成 PDF</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 极客慕白 &mdash;</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/5-pdf-skill/">5 个不为人知的 PDF 技巧</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/better-font-on-win/">在 Windows 上享受更棒的字体渲染</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/syncthing-the-best/">Syncthing就是我要的同步备份软件</a>
+      </li>
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/好软推荐/">好软推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/NumPy/" style="font-size: 14px;">NumPy</a> <a href="/tags/Python/" style="font-size: 24px;">Python</a> <a href="/tags/TensorFlow/" style="font-size: 14px;">TensorFlow</a> <a href="/tags/pdf/" style="font-size: 14px;">pdf</a> <a href="/tags/syncthing/" style="font-size: 14px;">syncthing</a> <a href="/tags/windows/" style="font-size: 14px;">windows</a> <a href="/tags/人工智能/" style="font-size: 14px;">人工智能</a> <a href="/tags/备份/" style="font-size: 14px;">备份</a> <a href="/tags/字体/" style="font-size: 14px;">字体</a> <a href="/tags/数据科学/" style="font-size: 14px;">数据科学</a> <a href="/tags/美化/" style="font-size: 14px;">美化</a> <a href="/tags/软件/" style="font-size: 14px;">软件</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="极客慕白">极客慕白</a>
+			&copy; 2019
+		</section>
+		<nav class="site-footer-nav">
+			
+            <a href="http://www.miitbeian.gov.cn" title="皖ICP备17018037号" target="_blank" rel="noopener">皖ICP备17018037号</a>
+            <a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+            <a href="https://geekmubai.com" title="GeekMubai" target="_blank" rel="noopener">GeekMubai</a>
+        </nav>
+    </div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="极客慕白">
+			
+                <img src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白 icon">
+			
+            <span>极客慕白</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">5 个不为人知的 PDF 技巧</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: 'aBRltWkLKGNezPSGs1TBA0GE-gzGzoHsz',
+        appKey: 'Tg0cJFUAcAbzFVaO5hwaRXsx',
+        placeholder: '你是魔鬼吧，都不留言！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
