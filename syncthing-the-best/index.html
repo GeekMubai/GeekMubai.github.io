@@ -185,13 +185,13 @@
 </ul>
 <p>其他方法可以自己决定，我是直接下载安装包命令行启动的</p>
 <h3 id="在-MacOS-上安装"><a href="#在-MacOS-上安装" class="headerlink" title="在 MacOS 上安装"></a><a href="#在-MacOS-上安装" title="在 MacOS 上安装"></a>在 MacOS 上安装</h3><p>我用的是 MacOS，可以直接使用 homebrew 安装启动，并且可以开机自动启动，你也可以到这里 <a href="https://github.com/sieren/QSyncthingTray/releases" target="_blank" rel="noopener">QSyncthingTray</a> 下载 MacOS 的 GUI 版</p>
-<p>brew install syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install syncthing</span><br></pre></td></tr></table></figure>
 <p>启动服务（同时设置开机启动）</p>
-<p>brew services start syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start syncthing</span><br></pre></td></tr></table></figure>
 <p>停止服务（同时关闭自启）</p>
-<p>brew services stop syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services stop syncthing</span><br></pre></td></tr></table></figure>
 <p>手动启动（不会开机自启）</p>
-<p>syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syncthing</span><br></pre></td></tr></table></figure>
 <p>启动进程后，可以用浏览器打开 <code>http://localhost:8384/</code> 来查看 web 管理页</p>
 <h3 id="在-Windows-上安装"><a href="#在-Windows-上安装" class="headerlink" title="在 Windows 上安装"></a><a href="#在-Windows-上安装" title="在 Windows 上安装"></a>在 Windows 上安装</h3><p>Windows 直接在这里 <a href="https://github.com/canton7/SyncTrayzor/releases" target="_blank" rel="noopener">SyncTrayzor</a> 下载软件运行</p>
 <h3 id="在-Linux-VPS-上安装"><a href="#在-Linux-VPS-上安装" class="headerlink" title="在 Linux VPS 上安装"></a><a href="#在-Linux-VPS-上安装" title="在 Linux VPS 上安装"></a>在 Linux VPS 上安装</h3><p>大多数发行版和不同 CPU 平台的安装包，可以在这里 <a href="https://github.com/syncthing/syncthing/releases" target="_blank" rel="noopener">Syncthing</a> 找到，把它下载到你想要放在的目录然后设置权限，使用命令运行</p>
@@ -201,48 +201,37 @@
 <p>然后续费 9 个月的阿里云学生机，美滋滋😎</p>
 <p>虽然带宽比较低，但是对于这种连续同步的备份来说，在第一次备份之后，后面都是增量备份了，除非你都是备份大文件，要不对带宽的要求不是很高，另外 40G 的盘，完全够我备份用了，阿里云最主要就是稳定，很适合做我的备份机</p>
 <h4 id="下载-Syncthing"><a href="#下载-Syncthing" class="headerlink" title="下载 Syncthing"></a><a href="#下载-Syncthing" title="下载 Syncthing"></a>下载 Syncthing</h4><p>下载最新的包，解压，移动到 <code>/bin/</code> 里，改权限</p>
-<p>wget <a href="https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz" target="_blank" rel="noopener">https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz</a>  </p>
-<p>tar xzvf ./syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </p>
-<p>mv ./syncthing-linux-amd64-v0.14.49-rc.1/syncthing /bin/  </p>
-<p>chmod +x /bin/syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </span><br><span class="line">  </span><br><span class="line">tar xzvf ./syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </span><br><span class="line">  </span><br><span class="line">mv ./syncthing-linux-amd64-v0.14.49-rc.1/syncthing /bin/  </span><br><span class="line">  </span><br><span class="line">chmod +x /bin/syncthing</span><br></pre></td></tr></table></figure>
 <h4 id="进程守护"><a href="#进程守护" class="headerlink" title="进程守护"></a><a href="#进程守护" title="进程守护"></a>进程守护</h4><p>安装 supervisor</p>
-<p>apt-get install supervisor  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install supervisor</span><br></pre></td></tr></table></figure>
 <p>配置守护</p>
-<p>vi /etc/supervisor/conf.d/syncthing.conf  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/supervisor/conf.d/syncthing.conf</span><br></pre></td></tr></table></figure>
 <p>填入以下内容</p>
-<p>[program:syncthing]<br>command = /bin/syncthing -no-browser -home=”/root/.config/syncthing”<br>directory = /root<br>autorestart = True<br>user = root<br>environment = STNORESTART=”1”, HOME=”/root”  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\[program:syncthing\]  </span><br><span class="line">command = /bin/syncthing -no-browser -home=&quot;/root/.config/syncthing&quot;  </span><br><span class="line">directory = /root  </span><br><span class="line">autorestart = True  </span><br><span class="line">user = root  </span><br><span class="line">environment = STNORESTART=&quot;1&quot;, HOME=&quot;/root&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>，我例子里使用的是 root 用户，所以响应的目录是 <code>/root</code>，你要是使用其他用户，应该是 <code>/home/用户名</code>，就是你登录时默认所在的目录</p>
 <p>现在就可以使用 <code>supervisorctl</code> 命令来管理进程了</p>
 <ul>
 <li>启动</li>
 </ul>
-<p>supervisorctl start syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl start syncthing</span><br></pre></td></tr></table></figure>
 <ul>
-<li>重启</li>
+<li><p>重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl restart syncthing</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl stop syncthing</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>supervisorctl restart syncthing  </p>
-<ul>
-<li>停止</li>
-</ul>
-<p>supervisorctl stop syncthing  </p>
 <p>启动进程后，可以用浏览器打开 <code>http://你的IP:8384/</code> 来查看 web 管理页</p>
 <p>如果无法打开页面，需要修改 <code>/.config/syncthing/config.xml</code> 里的 <code>127.0.0.1:8384</code> 字段为 <code>0.0.0.0:8384</code>，或者你可以和我一样使用 nginx 做反向代理，前提是你知道怎么做</p>
 <h3 id="在路由器上安装"><a href="#在路由器上安装" class="headerlink" title="在路由器上安装"></a><a href="#在路由器上安装" title="在路由器上安装"></a>在路由器上安装</h3><p>目前 <a href="https://entware.net/" target="_blank" rel="noopener">Entware</a> 源里已经有这个包了，但是我发现它是个旧版本，并且有问题，所以这里我选择手动安装</p>
 <p>这里的例子是 LEDE x64 但是也适合一切安装了 Entware 的路由器</p>
 <p>在这里 <a href="https://github.com/syncthing/syncthing/releases" target="_blank" rel="noopener">Syncthing</a> 下载对应 CPU 平台的安装包，可以用 <code>uname -m</code> 查看，我这里是 x86_64 所以选择 amd64</p>
-<h4 id="下载-syncthing"><a href="#下载-syncthing" class="headerlink" title="下载 syncthing"></a><a href="#下载-syncthing" title="下载 syncthing"></a>下载 syncthing</h4><p>下载最新的包，解压，移动到 <code>/opt/bin/</code> 里，改权限</p>
-<p>wget <a href="https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz" target="_blank" rel="noopener">https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz</a>  </p>
-<p>tar xzvf ./syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </p>
-<p>mv ./syncthing-linux-amd64-v0.14.49-rc.1/syncthing /opt/bin/  </p>
-<p>chmod +x /opt/bin/syncthing  </p>
-<h4 id="添加启动命令"><a href="#添加启动命令" class="headerlink" title="添加启动命令"></a><a href="#添加启动命令" title="添加启动命令"></a>添加启动命令</h4><p>创建并编辑 <code>/opt/etc/init.d/S92syncthing</code></p>
-<p>vi /opt/etc/init.d/S92syncthing  </p>
+<h4 id="下载-syncthing"><a href="#下载-syncthing" class="headerlink" title="下载 syncthing"></a><a href="#下载-syncthing" title="下载 syncthing"></a>下载 syncthing</h4><p>下载最新的包，解压，移动到 <code>/opt/bin/</code> 里，改权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/syncthing/syncthing/releases/download/v0.14.49-rc.1/syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </span><br><span class="line">  </span><br><span class="line">tar xzvf ./syncthing-linux-amd64-v0.14.49-rc.1.tar.gz  </span><br><span class="line">  </span><br><span class="line">mv ./syncthing-linux-amd64-v0.14.49-rc.1/syncthing /opt/bin/  </span><br><span class="line">  </span><br><span class="line">chmod +x /opt/bin/syncthing</span><br></pre></td></tr></table></figure></p>
+<h4 id="添加启动命令"><a href="#添加启动命令" class="headerlink" title="添加启动命令"></a><a href="#添加启动命令" title="添加启动命令"></a>添加启动命令</h4><p>创建并编辑 <code>/opt/etc/init.d/S92syncthing</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /opt/etc/init.d/S92syncthing</span><br></pre></td></tr></table></figure></p>
 <p>在里面填上下面所有字段</p>
-<p>#!/bin/sh<br>ENABLED=yes<br>PROCS=syncthing<br>ARGS=”-home=/opt/etc/syncthing”<br>PREARGS=””<br>DESC=$PROCS<br>PATH=/opt/sbin:/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin  </p>
-<p>if [ ! -d /opt/etc/syncthing ]; then<br> /opt/bin/syncthing -generate=”/opt/etc/syncthing”<br> sed -i ‘s|127.0.0.1:8384|0.0.0.0:8384|’ /opt/etc/syncthing/config.xml<br>elif [[ -f /opt/etc/syncthing/config.xml -a “127.0.0.1:8384”==”127.0.0.1:8384” ]]; then<br> sed -i ‘s|127.0.0.1:8384|0.0.0.0:8384|’ /opt/etc/syncthing/config.xml<br>fi  </p>
-<p>. /opt/etc/init.d/rc.func  </p>
-<p>然后给权限</p>
-<p>chmod +x /opt/etc/init.d/S92syncthing  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> #!/bin/sh  </span><br><span class="line">ENABLED=yes  </span><br><span class="line">PROCS=syncthing  </span><br><span class="line">ARGS=&quot;-home=/opt/etc/syncthing&quot;  </span><br><span class="line">PREARGS=&quot;&quot;  </span><br><span class="line">DESC=$PROCS  </span><br><span class="line">PATH=/opt/sbin:/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin  </span><br><span class="line">  </span><br><span class="line">if \[ ! -d /opt/etc/syncthing \]; then  </span><br><span class="line"> /opt/bin/syncthing -generate=&quot;/opt/etc/syncthing&quot;  </span><br><span class="line"> sed -i &apos;s|127.0.0.1:8384|0.0.0.0:8384|&apos; /opt/etc/syncthing/config.xml  </span><br><span class="line">elif \[\[ -f /opt/etc/syncthing/config.xml -a &quot;127.0.0.1:8384&quot;==&quot;127.0.0.1:8384&quot; \]\]; then  </span><br><span class="line"> sed -i &apos;s|127.0.0.1:8384|0.0.0.0:8384|&apos; /opt/etc/syncthing/config.xml  </span><br><span class="line">fi  </span><br><span class="line">  </span><br><span class="line">. /opt/etc/init.d/rc.func</span><br></pre></td></tr></table></figure>
+<p>然后给权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /opt/etc/init.d/S92syncthing</span><br></pre></td></tr></table></figure></p>
 <p>用法: /opt/etc/init.d/S92syncthing (start|stop|restart|check)</p>
 <p>启动服务就能在浏览器打开 <code>路由器IP:8384</code> 例如 <code>192.168.1.1:8384</code> 打开管理页了</p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><a href="#使用方法" title="使用方法"></a>使用方法</h2><p>易于使用是 Syncthing 的一个重要特性，打开管理页，一目了然</p>
