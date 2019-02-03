@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>内网穿透神器搭建 | 极客慕白</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="慕白">
+	<meta name="description" content="配置和使用上是最方便的内网穿透工具">
+
+	
+	<meta name="keywords" content="内网穿透">
+	
+
+	
+	<link rel="shortcut icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	<link rel="apple-touch-icon" href="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://geekmubai.com/feed" title="极客慕白">
+	
+
+	<meta property="og:site_name" content="极客慕白">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="内网穿透神器搭建 | 极客慕白">
+	<meta property="og:description" content="配置和使用上是最方便的内网穿透工具">
+	<meta property="og:url" content="https://blog.geekmubai.com/frp/">
+
+	
+	<meta property="article:published_time" content="2019-02-03T23:02:19+08:00"> 
+	<meta property="article:author" content="慕白">
+	<meta property="article:published_first" content="极客慕白, /frp/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/geekmubai" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="facebook" href="https://blog.csdn.net/geekmubai" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1049 1024"><path d="M1141.351404 39.055942l-28.91333 218.474629c-126.144728-19.927251-251.601043-38.376709-377.75495-27.674187-115.460564 9.802996-227.405635 32.180995-309.124802 122.987208-150.018878 166.696821-68.391499 396.461416 158.252293 437.463272 141.115408 25.52634 283.919721 11.785624 425.448176-8.123269-5.452228 112.440727-5.764308 95.303843-10.674985 205.229569-1.073924 24.057726 4.277337 14.612705-161.648461 31.914809-176.004159 9.004437-351.879815 11.189-520.550085-52.888447C156.545029 905.721534 30.675666 809.16019 5.176863 630.815428c-26.251468-183.595056 48.803865-331.796524 192.516883-446.128091C413.36883 13.098197 790.802521-47.271 1141.351404 39.055942z" fill="#ffffff"/></svg>
+    </a>
+    
+    
+    
+    
+    <a class="social-link" title="bilibili" href="https://space.bilibili.com/167817331/#" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816zm301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72.864 73.92.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856zm-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456zm638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456zm-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952z"/></svg>
+    </a>
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2019-02-03T15:23:01.194Z" itemprop="datePublished">
+                    2019-02-3
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/教程/">教程</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">内网穿透神器搭建</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <p>目前个人认为配置和使用上是最方便的内网穿透工具，已经用了快两年了，拿来穿透进没有公网的位于学校宿舍的路由器，蹭蹭百度文库企业账号和知网之类的23333</p>
+<h1 id="frp"><a href="#frp" class="headerlink" title="frp"></a>frp</h1><p><a href="https://github.com/fatedier/frp" title="View source code on Github" target="_blank" rel="noopener">fatedier/frp</a></p>
+<p>frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为什么不直接放一个一键脚本？手动搭建不会很麻烦吗？</p>
+<ol>
+<li>这个程序配置起来一点都不麻烦</li>
+<li>一键脚本固然方便，但是对于萌新，我更建议你们尝试手动配置，这样对熟悉与理解 Linux 会有更大帮助</li>
+<li>手动配置具有更大的自由度，并且你将会很清楚这些程序是干什么的</li>
+</ol>
+<p>本文将以萌新也能看懂的方式讲解</p>
+<ol>
+<li>frp服务端搭建</li>
+<li>frp服务端配置</li>
+<li>frp客户端配置</li>
+</ol>
+<p>不会讲解frp客户端的搭建，因为目前frp的主要用途是用于内网穿透，因此客户端通常情况下是家用路由器之类的没有公网的设备</p>
+<p>本文针对的受众是拥有“刷了带frp的固件的路由器（<a href="http://www.right.com.cn/forum/thread-161324-1-1.html" target="_blank" rel="noopener">比如这个</a>）”而不清楚如何使用或者在使用上存在疑惑的萌新</p>
+<p>如果你需要在一个不含 frp 的 openwrt 路由器上搭建客户端，或者是拥有树莓派之类的家用 linux 机想部署客户端，那么我认为你的知识水平应该足以根据frp服务端搭建的步骤来类比出客户端的搭建方法，以及通过百度谷歌来解决问题</p>
+<p>从<code>0.18.0</code>版本开始，新版与旧版不兼容，并且部分配置字段不同，为了不混淆，这里讲的是新版的搭建与配置[/scode]</p>
+<h2 id="服务端-frps"><a href="#服务端-frps" class="headerlink" title="服务端 - frps"></a>服务端 - frps</h2><h3 id="1-下载程序"><a href="#1-下载程序" class="headerlink" title="1. 下载程序"></a>1. 下载程序</h3><p>首先到 frp 的 releases 页面下载最新版的对应 VPS 的处理器架构的压缩包<br><a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a></p>
+<p>如何知道 VPS 的处理器架构？在 VPS 上运行这个命令：</p>
+<p><code>arch</code></p>
+<p>如果输出<code>x86_64</code>则需要下载带<code>linux_amd64</code>的那个压缩包；<br>如果输出的是其他的，则在文件列表中找 linux 的对应架构的压缩包</p>
+<p>以<code>x86_64</code>架构举例（目前大多数都应该是这个架构），本文撰写时 frp 最新版是<code>v0.18.0</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd /root</span><br><span class="line"># 下载</span><br><span class="line">wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v0.18.0/frp_0.18.0_linux_amd64.tar.gz</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf frp_0.18.0_linux_amd64.tar.gz</span><br><span class="line"># 文件夹名改成 frp，不然目录太长了不方便</span><br><span class="line">mv frp_0.18.0_linux_amd64 frp</span><br><span class="line">cd frp</span><br><span class="line"># 确保 frps 程序具有可执行权限</span><br><span class="line">chmod +x frps</span><br></pre></td></tr></table></figure>
+<p>然后试着运行一下<code>frps</code>，看看是否能正常运行</p>
+<p><code>./frps --help</code></p>
+<p>正常情况下会输出一串帮助信息，那么就说明你下载了正确架构的版本</p>
+<p>如果提示<code>-bash: ./frps: cannot execute binary file: Exec format error</code>就说明你下错版本了</p>
+<h3 id="2-配置程序"><a href="#2-配置程序" class="headerlink" title="2. 配置程序"></a>2. 配置程序</h3><p>参考以下配置说明来书写配置文件<code>frps.ini</code>，你可以先在电脑上打一份草稿<br>此处只解释说明一些必要和常用的配置，如需研究完整配置说明请看目录下的<code>frps_full.ini</code>，以及参考<a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="noopener">frp中文说明</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># 下面这句开头必须要有，表示配置的开始</span><br><span class="line">[common]</span><br><span class="line"></span><br><span class="line"># frp 服务端端口（必须）</span><br><span class="line">bind_port = 7000</span><br><span class="line"></span><br><span class="line"># frp 服务端密码（必须）</span><br><span class="line">token = 12345678</span><br><span class="line"></span><br><span class="line"># 认证超时时间，由于时间戳会被用于加密认证，防止报文劫持后被他人利用</span><br><span class="line"># 因此服务端与客户端所在机器的时间差不能超过这个时间（秒）</span><br><span class="line"># 默认为900秒，即15分钟，如果设置成0就不会对报文时间戳进行超时验证</span><br><span class="line">authentication_timeout = 900</span><br><span class="line"></span><br><span class="line"># 仪表盘端口，只有设置了才能使用仪表盘（即后台）</span><br><span class="line">dashboard_port = 7500</span><br><span class="line"></span><br><span class="line"># 仪表盘访问的用户名密码，如果不设置，则默认都是 admin</span><br><span class="line">dashboard_user = admin</span><br><span class="line">dashboard_pwd = admin</span><br><span class="line"></span><br><span class="line"># 如果你想要用 frp 穿透访问内网中的网站（例如路由器设置页面）</span><br><span class="line"># 则必须要设置以下两个监听端口，不设置则不会开启这项功能</span><br><span class="line">vhost_http_port = 10080</span><br><span class="line">vhost_https_port = 10443</span><br><span class="line"></span><br><span class="line"># 此设置需要配合客户端设置，仅在穿透到内网中的 http 或 https 时有用（可选）</span><br><span class="line"># 假设此项设置为 example.com，客户端配置 http 时将 subdomain 设置为 test，</span><br><span class="line"># 则你将 test.example.com 解析到服务端后，可以使用此域名来访问客户端对应的 http</span><br><span class="line">subdomain_host = example.com</span><br></pre></td></tr></table></figure>
+<p>然后把你的准备好的配置文件内容写入<code>frps.ini</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">dashboard_port = 7500</span><br><span class="line">dashboard_user = admin</span><br><span class="line">dashboard_pwd = admin</span><br><span class="line">vhost_http_port = 10080</span><br><span class="line">vhost_https_port = 10443</span><br><span class="line">subdomain_host = example.com&quot; &gt; frps.ini</span><br></pre></td></tr></table></figure>
+<p>试着启动一下<code>frps</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 使用 -c 参数指定配置文件</span><br><span class="line">./frps -c frps.ini</span><br></pre></td></tr></table></figure>
+<p>如果没有出现错误提示就说明配置没有问题，可以正常使用</p>
+<p>接着按下<code>Ctrl + C</code>终止程序运行</p>
+<h3 id="3-使-frps-在后台持续运行"><a href="#3-使-frps-在后台持续运行" class="headerlink" title="3. 使 frps 在后台持续运行"></a>3. 使 frps 在后台持续运行</h3><h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>直接使用前面的命令行来运行是不行的，因为在关掉 ssh 窗口后程序<code>frps</code>就会停止运行，因此要使用<code>nohup [command] &amp;</code>这种操作来使其在后台运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup /root/frp/frps -c /root/frp/frps.ini &amp;</span><br></pre></td></tr></table></figure>
+<p>并且程序的所有输出（日志）会被写入<code>nohup.out</code>文件中，你可以使用<code>cat</code>命令查看其内容</p>
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><p>想停止的话，结束<code>frps</code>即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill frps</span><br></pre></td></tr></table></figure>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><p>那就先停止再启动嘛23333</p>
+<h4 id="加入开机自启"><a href="#加入开机自启" class="headerlink" title="加入开机自启"></a>加入开机自启</h4><p>编辑<code>/etc/rc.local</code>文件，将启动那句命令加到<code>exit 0</code>语句之前（如果有）</p>
+<h2 id="客户端-frpc"><a href="#客户端-frpc" class="headerlink" title="客户端 - frpc"></a>客户端 - frpc</h2><p>如需研究完整配置说明请看目录下的<code>frpc_full.ini</code>，以及参考<a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="noopener">frp中文说明</a></p>
+<h3 id="书写配置"><a href="#书写配置" class="headerlink" title="书写配置"></a>书写配置</h3><h4 id="基本配置（必须）"><a href="#基本配置（必须）" class="headerlink" title="基本配置（必须）"></a>基本配置（必须）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 下面这句开头必须要有，表示配置的开始</span><br><span class="line">[common]</span><br><span class="line"># frp 服务端地址，可以填ip或者域名</span><br><span class="line">server_addr = 0.0.0.0</span><br><span class="line"># frp 服务端端口，即填写服务端配置中的 bind_port</span><br><span class="line">server_port = 7000</span><br><span class="line"># 填写 frp 服务端密码</span><br><span class="line">token = 12345678</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP/UDP"></a>TCP/UDP</h4><p>这里以转发 ssh 为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 自定义一个配置名称，格式为“[名称]”，放在开头</span><br><span class="line">[ssh]</span><br><span class="line"># 连接类型，填 tcp 或 udp</span><br><span class="line">type = tcp</span><br><span class="line"></span><br><span class="line"># 本地ip，填你需要转发到的目的ip</span><br><span class="line"># 如果是转发到frp客户端所在本机（比如路由器）则填 127.0.0.1</span><br><span class="line"># 否则填对应机器的内网ip</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line"># 需要转发到的端口，比如 ssh 端口是 22</span><br><span class="line">local_port = 22</span><br><span class="line"></span><br><span class="line"># 是否加密客户端与服务端之间的通信，默认是 false</span><br><span class="line">use_encryption = false</span><br><span class="line"># 是否压缩客户端与服务端之间的通信，默认是 false</span><br><span class="line"># 压缩可以节省流量，但需要消耗 CPU 资源</span><br><span class="line"># 加密自然也会消耗 CPU 资源，但是不大</span><br><span class="line">use_compression = false</span><br><span class="line"></span><br><span class="line"># frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问</span><br><span class="line"># 客户端的 local_port，如果填0则会随机分配一个端口</span><br><span class="line">remote_port = 6001</span><br></pre></td></tr></table></figure>
+<h4 id="HTTP-S"><a href="#HTTP-S" class="headerlink" title="HTTP(S)"></a>HTTP(S)</h4><p>以转发路由器设置页面为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># 自定义一个配置名称，格式为“[名称]”，放在开头</span><br><span class="line">[router-web]</span><br><span class="line"># 连接类型，填 http 或 https</span><br><span class="line">type = http</span><br><span class="line"></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 80</span><br><span class="line"></span><br><span class="line"># http 可以考虑加密和压缩一下</span><br><span class="line">use_encryption = true</span><br><span class="line">use_compression = true</span><br><span class="line"></span><br><span class="line"># 自定义访问网站的用户名和密码，如果不定义的话谁都可以访问，会不安全</span><br><span class="line"># 有些路由器如果从内部访问web是不需要用户名密码的，因此需要在这里加一层密码保护</span><br><span class="line"># 如果你发现不加这个密码保护，路由器配置页面原本的用户认证能正常生效的话，可以不加</span><br><span class="line">http_user = admin</span><br><span class="line">http_pwd = admin</span><br><span class="line"></span><br><span class="line"># 还记得我们在服务端配置的 subdomain_host = example.com 吗</span><br><span class="line"># 假设这里我们填 web01，那么你将 web01.example.com 解析到服务端ip后</span><br><span class="line"># 你就可以使用 域名:端口 来访问你的 http 了</span><br><span class="line"># 这个域名的作用是用来区分不同的 http，因为你可以配置多个这样的配置</span><br><span class="line">subdomain = web01</span><br><span class="line"></span><br><span class="line"># 自定义域名，这个不同于 subdomain，你可以设置与 subdomain_host 无关的其他域名</span><br><span class="line"># subdomain 与 custom_domains 中至少有一个必须要设置</span><br><span class="line">custom_domains = web02.yourdomain.com</span><br><span class="line"></span><br><span class="line"># 匹配路径，可以设置多个，用逗号分隔，比如你设置 locations 为以下这个，</span><br><span class="line"># 那么所有 http://xxx/abc 和 http://xxx/def 都会被转发到 http://xxx/</span><br><span class="line"># 如果不需要这个功能可以不写这项，就直接该怎么访问就怎么访问</span><br><span class="line">locations = /abc,/def</span><br><span class="line"></span><br><span class="line"># 重写 host header，相当于反向代理中的“发送域名”</span><br><span class="line"># 如果设置了，转发 http 时，请求中的 host 会被替换成这个</span><br><span class="line"># 一般情况下不需要用到这个，可以不写这项</span><br><span class="line">host_header_rewrite = dev.yourdomain.com</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-UDP-范围转发"><a href="#TCP-UDP-范围转发" class="headerlink" title="TCP/UDP 范围转发"></a>TCP/UDP 范围转发</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 自定义一个配置名称，格式为“[range:名称]”，放在开头</span><br><span class="line">[range:multi-port]</span><br><span class="line"></span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">use_encryption = false</span><br><span class="line">use_compression = false</span><br><span class="line"></span><br><span class="line"># 本地端口和远程端口可以指定多个范围，如下格式，且范围之间必须一一对应</span><br><span class="line">local_port = 6010-6020,6022,6024-6028</span><br><span class="line">remote_port = 16010-16020,16022,16024-16028`</span><br></pre></td></tr></table></figure>
+<h3 id="合并配置"><a href="#合并配置" class="headerlink" title="合并配置"></a>合并配置</h3><p>将你决定要使用的配置合起来，然后填到路由器的 frp 配置脚本中</p>
+<p>如果你是在 linux 上运行，则写入到<code>frpc.ini</code>中，然后仿照运行服务端的方式来运行客户端</p>
+<p>比如将以上示例配置合并之后，看起来应该是这个样子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 0.0.0.0</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">use_encryption = false</span><br><span class="line">use_compression = false</span><br><span class="line">remote_port = 6001</span><br><span class="line"></span><br><span class="line">[router-web]</span><br><span class="line">type = http</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 80</span><br><span class="line">use_encryption = true</span><br><span class="line">use_compression = true</span><br><span class="line">http_user = admin</span><br><span class="line">http_pwd = admin</span><br><span class="line">subdomain = web01</span><br><span class="line">custom_domains = web02.yourdomain.com</span><br><span class="line">locations = /abc,/def</span><br><span class="line">host_header_rewrite = dev.yourdomain.com</span><br><span class="line"></span><br><span class="line">[range:multi-port]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">use_encryption = false</span><br><span class="line">use_compression = false</span><br><span class="line">local_port = 6010-6020,6022,6024-6028</span><br><span class="line">remote_port = 16010-16020,16022,16024-16028`</span><br></pre></td></tr></table></figure>
+<h2 id="事后"><a href="#事后" class="headerlink" title="事后"></a>事后</h2><p>登录服务端的 dashboard，看看是否连接成功，测试各项转发是否可用</p>
+<p>如果出现无法使用的情况，按照基本思路排查问题：</p>
+<ol>
+<li>看服务端和客户端日志是否有报错</li>
+<li>客户端与服务端连接正常，就检查是否是服务端的防火墙或者安全组是否没开放使用到的端口</li>
+<li>如果客户端是在路由器上，想转发至内网设备上的某个端口或服务，请检查目标设备的防火墙是否开放所需端口，且建议为该内网设备分配一个静态ip</li>
+</ol>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="Clover引导简明教程" href="/clover/">
+            Clover引导简明教程 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#frp"><span class="toc-text">frp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务端-frps"><span class="toc-text">服务端 - frps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-下载程序"><span class="toc-text">1. 下载程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-配置程序"><span class="toc-text">2. 配置程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使-frps-在后台持续运行"><span class="toc-text">3. 使 frps 在后台持续运行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#停止"><span class="toc-text">停止</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重启"><span class="toc-text">重启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加入开机自启"><span class="toc-text">加入开机自启</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端-frpc"><span class="toc-text">客户端 - frpc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#书写配置"><span class="toc-text">书写配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本配置（必须）"><span class="toc-text">基本配置（必须）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-UDP"><span class="toc-text">TCP/UDP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP-S"><span class="toc-text">HTTP(S)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-UDP-范围转发"><span class="toc-text">TCP/UDP 范围转发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并配置"><span class="toc-text">合并配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事后"><span class="toc-text">事后</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 极客慕白 &mdash;</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/frp/">内网穿透神器搭建</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/clover/">Clover引导简明教程</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/5-pdf-skill/">5 个不为人知的 PDF 技巧</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MacOS/">MacOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/好软推荐/">好软推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://mubai.oss-cn-hangzhou.aliyuncs.com/background.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/Clover/" style="font-size: 14px;">Clover</a> <a href="/tags/NumPy/" style="font-size: 14px;">NumPy</a> <a href="/tags/Python/" style="font-size: 24px;">Python</a> <a href="/tags/TensorFlow/" style="font-size: 14px;">TensorFlow</a> <a href="/tags/frp/" style="font-size: 14px;">frp</a> <a href="/tags/pdf/" style="font-size: 14px;">pdf</a> <a href="/tags/syncthing/" style="font-size: 14px;">syncthing</a> <a href="/tags/windows/" style="font-size: 14px;">windows</a> <a href="/tags/人工智能/" style="font-size: 14px;">人工智能</a> <a href="/tags/内网穿透/" style="font-size: 14px;">内网穿透</a> <a href="/tags/备份/" style="font-size: 14px;">备份</a> <a href="/tags/字体/" style="font-size: 14px;">字体</a> <a href="/tags/数据科学/" style="font-size: 14px;">数据科学</a> <a href="/tags/美化/" style="font-size: 14px;">美化</a> <a href="/tags/软件/" style="font-size: 14px;">软件</a> <a href="/tags/黑苹果/" style="font-size: 14px;">黑苹果</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="极客慕白">极客慕白</a>
+			&copy; 2019
+		</section>
+		<nav class="site-footer-nav">
+			
+            <a href="http://www.miitbeian.gov.cn" title="皖ICP备17018037号" target="_blank" rel="noopener">皖ICP备17018037号</a>
+            <a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+            <a href="https://geekmubai.com" title="GeekMubai" target="_blank" rel="noopener">GeekMubai</a>
+        </nav>
+    </div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="极客慕白">
+			
+                <img src="https://mubai.oss-cn-hangzhou.aliyuncs.com/icon.png" alt="极客慕白 icon">
+			
+            <span>极客慕白</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">内网穿透神器搭建</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: 'aBRltWkLKGNezPSGs1TBA0GE-gzGzoHsz',
+        appKey: 'Tg0cJFUAcAbzFVaO5hwaRXsx',
+        placeholder: '你是魔鬼吧，都不留言！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
